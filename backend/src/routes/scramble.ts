@@ -18,7 +18,7 @@ export async function scrambleRoutes(server: FastifyInstance) {
         return {scramble};
     });
 
-server.get<{ Querystring: SolutionQuery }>('/solution/bld3x3', async (request) => {
+    server.get<{ Querystring: SolutionQuery }>('/solution/bld3x3', async (request) => {
         const { scramble } = request.query;
         const solution = solveBLD3x3(scramble);
         return { solution };
